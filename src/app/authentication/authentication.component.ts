@@ -50,9 +50,12 @@ export class AuthenticationComponent implements OnInit {
         return response
         // return res.json();
       }).toPromise().then((result: any) => {
-        if(result) {
+        if(!result.errors) {
           this.name = result.user.name;
+          this.searches = result.user.searches;
           this.setUser(result);
+        } else {
+          alert(result.errors[0])
         }
       });
     } else {
@@ -61,10 +64,12 @@ export class AuthenticationComponent implements OnInit {
         return response
         // return res.json();
       }).toPromise().then((result) => {
-        if(result) {
+        if(!result.errors) {
           this.name = result.user.name;
           this.searches = result.user.searches;
           this.setUser(result);
+        } else {
+          alert(result.errors[0])
         }
       });
     }
