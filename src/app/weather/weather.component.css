@@ -1,26 +1,29 @@
 .container-fluid {
   /*height: 100%;*/
 }
+.main, .misc, .hourly, .forecast {
+  /*border: 3px solid black;*/
+}
 .main {
   /*height: 500px;*/
-  background-color: green;
+  /*background-color: green;*/
 }
 .misc {
   /*height: 500px;*/
-  background-color: red;
+  /*background-color: red;*/
 }
 .hourly {
   /*height: 500px;*/
-  background-color: blue;
+  /*background-color: blue;*/
 }
 .forecast {
   /*height: 500px;*/
-  background-color: lime;
+  /*background-color: lime;*/
 }
 
 .navbar {
   z-index: 10000;
-  background-color: white;
+  background-color: rgba(192,192,192,0.95);
   width: 100%;
   position: fixed;
   margin-left: -15px;
@@ -30,4 +33,36 @@
 }
 .navbar-clear {
   height: 50px;
+}
+
+form {
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+}
+input {
+  height: 100%;
+  width: 100%;
+  color: black;
+  background-color: rgba(0,0,0,0);
+    border: 0px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+}
+button {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
