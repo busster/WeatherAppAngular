@@ -1,0 +1,11 @@
+<h1 class="location">Hourly Forecast</h1>
+<div class="hour-cont" *ngFor="let hour of hours | slice:0:10; let i=index">
+  <p class="hour-time"> {{hour.time}} :</p>
+  <p class="hour-temp"> {{hour.temperature}} </p>
+</div>
+
+<!-- <div class="icon-cont-hours col-xs-6">
+  <canvas id="{{i + 1}}" class="icon-canvas small" attr.data-sectionvalue="{{hour.icon}}"></canvas>
+</div> -->
+
+<div id="clear" style="clear: both;"></div>

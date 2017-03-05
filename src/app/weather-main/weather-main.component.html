@@ -1,0 +1,23 @@
+
+<!-- <p class="icon-cont"> 
+  <canvas id="0" class="icon-canvas" attr.data-sectionvalue="{{weather.icon}}"></canvas> 
+</p>  -->
+<h1 class="location">{{weatherMain.location}}</h1> 
+<p class="time">{{weatherMain.time}}</p> 
+<p class="temp">{{weatherMain.temperature}}</p> 
+<p class="summary">{{weatherMain.summary}}</p> 
+<p class="apparent">Feels like: {{weatherMain.apparentTemperature}}</p> 
+<p *ngIf="!!weatherMain.precipType" class="precipitation">{{weatherMain.precipProbability}} of {{weatherMain.precipType}}</p> 
+<p class="hi"><b>H</b> {{weatherMain.temperatureMax}} @ {{weatherMain.temperatureMaxTime}}</p> 
+<p class="lo"><b>L</b> {{weatherMain.temperatureMin}} @ {{weatherMain.temperatureMinTime}}</p>
+<br>
+<div class="alerts">Alerts: 
+  <ul *ngFor="let alert of alerts;">
+    <li class="collection-item alert"> 
+      <a class="alert-left" href="{{alert.uri}}">{{alert.title}}</a> 
+      <div class="alert-right">ends {{alert.expires}}</div> 
+    </li>
+  </ul>
+</div>
+
+

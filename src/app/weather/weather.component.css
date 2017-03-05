@@ -1,0 +1,33 @@
+.container-fluid {
+  /*height: 100%;*/
+}
+.main {
+  /*height: 500px;*/
+  background-color: green;
+}
+.misc {
+  /*height: 500px;*/
+  background-color: red;
+}
+.hourly {
+  /*height: 500px;*/
+  background-color: blue;
+}
+.forecast {
+  /*height: 500px;*/
+  background-color: lime;
+}
+
+.navbar {
+  z-index: 10000;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  margin-left: -15px;
+  padding-left: 10px;
+  top: 0;
+  height: 25px;
+}
+.navbar-clear {
+  height: 50px;
+}

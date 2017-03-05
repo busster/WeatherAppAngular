@@ -1,0 +1,12 @@
+<h1 class="weekly-heading">Weekly Forecast</h1>
+<div class="card-panel day" *ngFor="let day of days | slice:0:7; let i=index">  
+  <h4 class="day-date">{{day.time}}</h4> 
+  <!-- <div class="day-icon-cont"> 
+    <canvas id="{{i + 10}}" class="icon-canvas day-icon" attr.data-sectionvalue="{{day.icon}}"></canvas> 
+  </div>  -->
+  <p class="day-summary">{{day.summary}}</p> 
+  <p class="day-temp">H {{day.temperatureMax}}</p> 
+  <p class="day-temp">L {{day.temperatureMin}}</p> 
+  <p *ngIf="day.precipType" class="day-precipitation">{{day.precipProbability}} - {{day.precipType}}</p> 
+</div>
+<div id="clear" style="clear: both;"></div>

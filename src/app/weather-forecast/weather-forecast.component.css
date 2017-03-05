@@ -1,0 +1,8 @@
+.weekly-heading {
+  text-align: center;
+}
+.day {
+  float: left;
+  width: 200px;
+  height: 250px;
+}

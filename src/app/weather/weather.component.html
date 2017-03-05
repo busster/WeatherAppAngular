@@ -1,0 +1,39 @@
+<!-- <script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script> -->
+<!--   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZoccc4EfWOS2RWrYoqcFcS64lU4pnXXU&libraries=places&callback=initAutocomplete" async defer></script>
+ -->
+
+<div class="container-fluid">
+  <div class="navbar">
+    <form [formGroup]="searchForm" (ngSubmit)="searchWeather($event)">
+      <input formControlName="place" type="text" placeholder="Enter a place">
+      <button type="submit" [disabled]="!searchForm.valid">Search</button>
+    </form>
+  </div>
+  <div class="navbar-clear"></div>
+
+  <div *ngIf="weather">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 main">
+       <app-weather-main [weather]="weather"></app-weather-main>
+      </div>
+      <div class="col-lg-2 col-sm-4 misc">
+       <app-weather-misc [weather]="weather"></app-weather-misc>
+      </div>
+      <div class="col-lg-4 col-sm-8 hourly">
+       <app-weather-hourly [weather]="weather"></app-weather-hourly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 forecast">
+       <app-weather-forecast [weather]="weather"></app-weather-forecast>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 historic">
+       <app-chart *ngIf="chartData" [data]="chartData"></app-chart>
+      </div>
+    </div>
+
+
+</div>
