@@ -8,7 +8,6 @@
     <br>
     <a style="cursor: pointer;" (click)="logout()">logout</a>
   </div>
-  <h1 style="text-align: center;">SkyCast Weather</h1>
   <form *ngIf="!name" #authForm (ngSubmit)="login()" >
     <input *ngIf="createNewAccount" type="text" name="firstName" [(ngModel)]="authFormData.first_name" placeholder="first name">
     <br>
