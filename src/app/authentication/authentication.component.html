@@ -1,0 +1,25 @@
+
+  <div style="font-size: 2em;">{{name}}</div>
+  <div *ngIf="name">
+    <div>Previous Searches</div>
+    <select [(ngModel)] = "currentSearch" (change)="doSearch()">
+      <option *ngFor="let search of searches" [value]="search.place">{{search.place}}</option>
+    </select>
+    <a style="cursor: pointer;" (click)="logout()">logout</a>
+  </div>
+  <form *ngIf="!name" #authForm (ngSubmit)="login()" >
+    <input *ngIf="createNewAccount" type="text" name="firstName" [(ngModel)]="authFormData.first_name" placeholder="first name">
+    <br>
+    <input *ngIf="createNewAccount" type="text" name="lastName" [(ngModel)]="authFormData.last_name" placeholder="last name">
+    <br>
+    <input type="email" name="email" [(ngModel)]="authFormData.email" placeholder="email">
+    <br>
+    <input type="password" name="password" [(ngModel)]="authFormData.password" placeholder="password">
+    <br>
+    <input *ngIf="createNewAccount" type="password" name="confirmPassword" [(ngModel)]="authFormData.password_confirm" placeholder="confirm password">
+    <br>
+    <button type="submit" >{{createNewAccount ? "register" : "login"}}</button>
+    <br>
+    <a *ngIf="!createNewAccount" style="cursor: pointer;" (click)="register()">register</a>
+    <a *ngIf="createNewAccount" style="cursor: pointer;" (click)="cancel()">cancel</a>
+  </form>

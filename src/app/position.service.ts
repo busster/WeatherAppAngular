@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
+import 'rxjs/add/operator/toPromise';
+
+
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -25,10 +28,11 @@ export class PositionService {
     });
   }
 
-  search(coords) {
-    return this.http.get(`${this.apiSearch}${coords.place}${this.apiKey}`).map(res => {
+  search(place) {
+    return this.http.get(`${this.apiSearch}${place}${this.apiKey}`).map(res => {
+      console.log(res)
       return res.json();
-    });
+    }).toPromise();
   }
 
 

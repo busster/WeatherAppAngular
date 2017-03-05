@@ -12,6 +12,7 @@ import { WeatherComponent } from './weather/weather.component'
 export class WeatherService {
 
   public apiUrl = 'https://quiet-wave-59477.herokuapp.com';
+  // public apiUrl = 'http://localhost:3000';
 
   constructor(private http: Http) {
   }
@@ -22,14 +23,14 @@ export class WeatherService {
     });
   }
 
-  create(coord_data:any) {
-    return this.http.post(`${this.apiUrl}/weather`, {coord_data: coord_data}).map(res => {
+  create(weather_payload:any) {
+    return this.http.post(`${this.apiUrl}/weather`, {weather_payload: weather_payload}).map(res => {
       return res.json();
     });
   }
 
-  historic(coord_data:any) {
-    return this.http.post(`${this.apiUrl}/historic`, {coord_data: coord_data}).map(res => {
+  historic(weather_payload:any) {
+    return this.http.post(`${this.apiUrl}/historic`, {weather_payload: weather_payload}).map(res => {
       return res.json();
     });
   }

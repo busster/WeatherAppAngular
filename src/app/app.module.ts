@@ -13,6 +13,7 @@ import { WeatherHourlyComponent } from './weather-hourly/weather-hourly.componen
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 import { ChartComponent } from './chart/chart.component';
 import { GoogleChartComponent } from './google-chart/google-chart.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GoogleChartComponent } from './google-chart/google-chart.component';
     WeatherHourlyComponent,
     WeatherForecastComponent,
     ChartComponent,
-    GoogleChartComponent
+    GoogleChartComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
